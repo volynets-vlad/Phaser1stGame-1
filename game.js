@@ -15,7 +15,7 @@ var config = {
         update: update
     }
 };
-//
+
 var player;
 var stars;
 var bombs;
