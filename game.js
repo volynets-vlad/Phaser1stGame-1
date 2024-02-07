@@ -1,3 +1,4 @@
+//додали гравітацію
 var config = {
     type: Phaser.AUTO,
     width: 800,
@@ -26,7 +27,7 @@ var gameOver = false;
 var scoreText;
 
 var game = new Phaser.Game(config);
-
+//добавили картинки в код
 function preload ()
 {
     this.load.image('sky', 'assets/sky.png');
@@ -35,7 +36,7 @@ function preload ()
     this.load.image('bomb', 'assets/bomb.png');
     this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
 }
-
+//добавили небо,платформи,зірки та бомби в саму гру
 function create ()
 {
     this.add.image(400, 300, 'sky');
@@ -87,7 +88,7 @@ function create ()
 
     this.physics.add.collider(player, bombs, hitBomb, null, this);
 }
-
+//основне управління персонажем
 function update ()
 {
     if (gameOver)
@@ -119,7 +120,7 @@ function update ()
         player.setVelocityY(-330);
     }
 }
-
+//функція зірки при взаємодії з гравцем
 function collectStar (player, star)
 {
     star.disableBody(true, true);
@@ -144,7 +145,7 @@ function collectStar (player, star)
 
     }
 }
-
+//функція бомби при взаємодії з гравцем
 function hitBomb (player, bomb)
 {
     this.physics.pause();
