@@ -30,7 +30,7 @@ var game = new Phaser.Game(config);
 //добавили картинки в код
 function preload ()
 {
-    this.load.image('sky', 'assets/sky.png');
+    this.load.image('background', 'assets/background.jpg');
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
@@ -39,7 +39,7 @@ function preload ()
 //добавили небо,платформи,зірки та бомби в саму гру
 function create ()
 {
-    this.add.image(400, 300, 'sky');
+    this.add.image(400, 300, 'background');
     platforms = this.physics.add.staticGroup();
     platforms.create(400, 568, 'ground').setScale(2).refreshBody();
     platforms.create(600, 400, 'ground');
